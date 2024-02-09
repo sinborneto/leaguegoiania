@@ -143,6 +143,28 @@ i {
   animation: scaleButton 0.8s alternate infinite;
 }
 
+.logo-image-king {
+  width: auto;
+  height: 180px;
+  filter: saturate(200%);
+}
+
+.logo-image-mythos {
+  width: 240px;
+  height: 180px;
+  filter: saturate(200%);
+}
+
+@media(max-width: 768px) {
+  .logo-image-king {
+    height: 120px;
+  }
+  .logo-image-mythos {
+    width: 160px;
+    height: 120px;
+  }
+}
+
 @keyframes scaleButton {
   from {
     transform: scale(1);
