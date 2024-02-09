@@ -53,6 +53,12 @@ function scrollToAbout() {
     const id = document.getElementById('id').value;
     let nascimento = document.getElementById('brithday').value;
     nascimento = obterDataAtual(nascimento);
+    if (nome === '' || id === '') {
+      let messageAlert = (nome === '' && id === '') ? 'um nome e um id' : nome === '' ? 'um nome' : 'um id'
+      alert(`Por favor, insira ${messageAlert}.`);
+      return
+    }
+    
     const message = `Olá gostaria de realizar a minha inscrição para o torneio.%0A%0A
     Meus dados são:%0A
     Nome: ${nome}%0A
