@@ -21,10 +21,10 @@ function scrollToAbout() {
   function transformarData(nascimento) {
     var dataOriginalString = nascimento;
     var dataOriginal = new Date(dataOriginalString);
-    var dia = dataOriginal.getDate();
+    var dia = dataOriginal.getDate() + 1;
     var mes = dataOriginal.getMonth() + 1;
     var ano = dataOriginal.getFullYear();
-    var dataTransformadaString = dia + '/' + mes + '/' + ano;
+    var dataTransformadaString = dia + '/' + (mes >= 10 ? mes : `0${mes}`) + '/' + ano;
     return dataTransformadaString
   }
 
