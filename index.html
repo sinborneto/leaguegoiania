@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+  <title>Mythos TCG</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <div class="bg-home">
+    <header>
+
+      <nav class="header-content container">
+        <div class="header-icons" data-aos="fade-down">
+          <a href="https://www.instagram.com/mythos_tcg_club/" target="_blank">
+            <i class="fa-brands fa-instagram fa-2x"></i>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=98 8226-9621&text=Quero fazer um agendamento com a barbearia!" target="_blank">
+            <i class="fa-brands fa-whatsapp fa-2x"></i>
+          </a>
+        </div>
+
+        <div class="header-logo" data-aos="fade-up" data-aos-delay="300">
+          <img style="width: 240px; height: 180px; filter: saturate(200%);" data-aos="flip-up" data-aos-delay="300" data-aos-duration="1500" src="assets/mythos_logo.png" alt="" />
+          <img style="width: auto; height: 180px; filter: saturate(200%);" data-aos="flip-up" data-aos-delay="300" data-aos-duration="1500" src="assets/king_logo.png" alt="" />
+        </div>
+
+        <div>
+          <div data-aos="fade-down" class="button-lojas">
+            <a class="header-button" href="https://www.mythostcg.com.br/" target="_blank">
+              Conheça a Mythos
+            </a>
+            <a  style="margin-top: 10px" class="header-button" href="https://www.kingplaygames.com.br/?view=ecom/home" target="_blank">
+              Conheça a King
+            </a>
+          </div>
+        </div>
+
+      </nav>
+
+      <main class="hero container" data-aos="fade-up" data-aos-delay="400">
+        <h1>League Challenge, <span>8 de Março </span>
+          em Goiânia</h1>
+        <h1><span>Valor R$: 30,00 </span></h1>
+        <h1>Inicia rodada as 19h</h1>
+        <a class="button-contact" onclick="scrollToAbout()">
+          Realizar Inscrição
+        </a>
+      </main>
+
+    </header>
+
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about-content">
+      <div data-aos="zoom-in" data-aos-delay="100">
+        <img src="assets/pikachu.png" alt="" />
+      </div>
+
+      <div class="about-description" data-aos="zoom-out-left" data-aos-delay="250">
+        <h2>Sobre Nós</h2>
+        <p>Bem-vindo à nossa loja de card games, o lugar perfeito para entusiastas e jogadores de todos os níveis!</p>
+        <p>Nós nos dedicamos a fornecer uma experiência excepcional para os amantes de card games, oferecendo uma ampla variedade de jogos emocionantes, desde os clássicos até os mais recentes lançamentos.</p>
+        <p>Nossa equipe é formada por apaixonados por jogos de cartas, prontos para compartilhar suas experiências e conhecimentos contigo. Se você é novo no mundo dos card games ou um veterano experiente, há sempre algo para todos em nossa loja.</p>
+        <p>Convidamos você a nos conhecer pessoalmente, explorar nossa seleção de jogos, participar de eventos e torneios, e fazer novos amigos na comunidade. Estamos aqui para tornar sua jornada no universo dos card games ainda mais divertida e envolvente!</p>
+        <p>Junte-se a nós para momentos emocionantes, estratégias inteligentes e muita diversão. Esperamos vê-lo em breve na nossa loja!</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Inscrição -->
+
+  <section class="services">
+
+    <div id="inscricao" class="services-content container">
+      <h2>Inscrição</h2>
+      <form class="form-inscricao" id="formulario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+    
+        <label for="id">Id:</label>
+        <input type="text" id="id" name="id" pattern="[0-9]+" title="Por favor, insira apenas números." oninput="validarNumero(this)" required>
+    
+        <label for="brithday">Data de Nascimento:</label>
+        <input type="date" id="brithday" name="aniversario" max="1900-12-31" required>
+        <div class="button-lojas button-inscricao">
+          <a class="header-button" onclick="inscrever()" >
+            Inscrever
+          </a>
+        </div>
+      </form>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <div class="services">
+    <h2>Consulte nossa Localização</h2>
+  </div>
+
+  <iframe width="100%" src="https://maps.google.com/maps?q=Rua%20C-139,%20Qd.%20567,%20LT.%2016,%20Setor%20Nova%20Sui%C3%A7a%20-%2074.268-165&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+  <footer class="footer">
+    <div class="footer-icons">
+      <a href="https://www.instagram.com/mythos_tcg_club/" target="_blank">
+        <i class="fa-brands fa-instagram fa-2x"></i>
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=6282176651&text=Olá gostaria de saber mais sobre o torneio!" target="_blank">
+        <i class="fa-brands fa-whatsapp fa-2x"></i>
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- Button Whatsapp -->
+
+  <a href="https://api.whatsapp.com/send?phone=6282176651&text=Olá gostaria de saber mais sobre o torneio!" class="btn-whatsapp" target="_blank" data-aos="zoom-out-left" data-aos-delay="500" target="_blank">
+    <img src="assets/whatssapp.svg" alt="Botao whatsapp" />
+    <span class="tooltip-text">Fale conosco</span>
+  </a>
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
