@@ -1,24 +1,27 @@
 AOS.init();
 
+var dataAtual = new Date();
+let ano = dataAtual.getFullYear();
+let mes = dataAtual.getMonth() + 1;
+let dia = dataAtual.getDate();
+
 function obterDataAtual(date) {
-  var dataAtual = (date != undefined ? new Date(date) : new Date());
-  var ano = dataAtual.getFullYear() + (date ? 1 : 0);
-  var mes = dataAtual.getMonth() + 1;
-  var dia = dataAtual.getDate();
-  var dataFormatada; 
-  if (date != undefined) {
-    if (date.length === 0) return ''
-    dataFormatada = dia + '/' + (mes >= 10 ? mes : `0${mes}`) + '/' + ano;
-  } else {
-    dataFormatada = ano + '-' + (mes < 10 ? '0' : '') + mes + '-' + (dia < 10 ? '0' : '') + dia;
-  }
+  var dataFormatada;
+  let anoInput = date.substring(0, 4);
+  let mesInput = date.substring(5, 7);
+  let diaInput = date.substring(8, 10);
+  if (date.length === 0) return ''
+  dataFormatada = diaInput + '/' + mesInput + '/' + anoInput;
   return dataFormatada;
 }
 
+function formaterDataInicial() {
+  return (ano + '-' + (mes < 10 ? '0' : '') + mes + '-' + (dia < 10 ? '0' : '') + dia);
+}
 
 var campoAniversario = document.getElementById('brithday');
-campoAniversario.max = obterDataAtual();
-campoAniversario.value = obterDataAtual();
+campoAniversario.max = formaterDataInicial();
+campoAniversario.value = formaterDataInicial();
 var oldDate;
 
 campoAniversario.addEventListener('change', function() {
@@ -31,9 +34,19 @@ campoAniversario.addEventListener('change', function() {
   if (oldDate != undefined && campoAniversario.value === '') {
     campoAniversario.value = oldDate
   }
-  if (campoAniversario.value.slice(0, 4) > 2024) {
-      campoAniversario.value = 2024 + campoAniversario.value.substring(4);
-    }
+  if (campoAniversario.value.slice(0, 4) > ano) {
+      campoAniversario.value = ano + campoAniversario.value.substring(4);
+  }
+  if ((campoAniversario.value.slice(5, 7) > mes) && (campoAniversario.value.slice(0, 4) == ano)) {
+    mes = mes*1;
+    mes = (mes < 10 ? '0' : '') + mes;
+    campoAniversario.value = campoAniversario.value.substring(0,5) + mes + campoAniversario.value.substring(7,10);
+  }
+  if ((campoAniversario.value.slice(8, 10) > dia) && (campoAniversario.value.slice(5, 7) == mes) && (campoAniversario.value.slice(0, 4) == ano)) {
+    dia = dia*1;
+    dia = (dia < 10 ? '0' : '') + dia;
+    campoAniversario.value = campoAniversario.value.substring(0,8) + dia;
+  }
 });
 
 campoAniversario.addEventListener('blur', function() {
