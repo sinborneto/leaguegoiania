@@ -59,11 +59,7 @@ function scrollToAbout() {
       return
     }
     
-    const message = `Olá gostaria de realizar a minha inscrição para o torneio.%0A%0A
-    Meus dados são:%0A
-    Nome: ${nome}%0A
-    Id Pokemon: ${id}%0A
-    Data de Nascimento: ${nascimento}`
+    const message = `Olá gostaria de realizar a minha inscrição para o torneio.%0A%0AMeus dados são:%0ANome: ${nome}%0AId Pokemon: ${id}%0AData de Nascimento: ${nascimento}`
     window.open(`https://api.whatsapp.com/send?phone=6282176651&text=${message}`,'_blank')
   }
 
