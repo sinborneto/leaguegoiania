@@ -67,7 +67,7 @@ i {
 }
 
 .subscription-button {
-  width: 100%;
+  width: 278px;
   text-align: center;
   background-color: rgb(236, 209, 53) !important;
 }
@@ -326,6 +326,7 @@ i {
 .form-inscricao {
   display: flex;
   flex-flow: column;
+  align-items: center;
 }
 
 .button-lojas {
