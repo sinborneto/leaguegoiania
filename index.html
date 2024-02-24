@@ -57,7 +57,7 @@
       </nav>
 
       <main class="hero container" data-aos="fade-up" data-aos-delay="400">
-        <h1>League Challenge, <span>8 de Março </span>
+        <h1>League Challenge TCG e GO CUP, <span> 8 de Março </span>
           em Goiânia</h1>
         <h1><span>Valor R$: 30,00 </span></h1>
         <h1>Início da rodada às 19h</h1>
@@ -96,17 +96,40 @@
 
     <div id="inscricao" class="services-content container">
       <h2>Inscrição</h2>
-      <form class="form-inscricao" id="formulario">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+      <div data-aos="fade-down" class="button-tournament">
+        <a class="button-contact" onclick="registrationControl(true)">
+          Inscrição TCG
+        </a>
+        <a class="button-contact" onclick="registrationControl(false)">
+          Inscrição CUP-GO
+        </a>
+      </div>
+      <form class="form-inscricao" id="tcg-form">
+        <label for="nome-tcg">Nome:</label>
+        <input type="text" id="nome-tcg" name="nome" required>
     
-        <label for="id">Id:</label>
-        <input type="text" id="id" name="id" pattern="[0-9]+" title="Por favor, insira apenas números." oninput="validarNumero(this)" required>
+        <label for="id-tcg">Id Pokemon TCG:</label>
+        <input type="text" id="id-tcg" name="id" pattern="[0-9]+" title="Por favor, insira apenas números." oninput="validarNumero(this)" required>
     
-        <label for="brithday">Data de Nascimento:</label>
-        <input type="date" id="brithday" name="aniversario" min="1900-12-31" required>
+        <label for="birthday-tcg">Data de Nascimento:</label>
+        <input type="date" id="birthday-tcg" name="aniversario" min="1900-12-31" required>
         <div class="button-inscricao">
-          <a class="subscription-button" onclick="inscrever()" >
+          <a class="subscription-button" onclick="inscrever(true)" >
+            Inscrever
+          </a>
+        </div>
+      </form>
+      <form class="form-inscricao" id="go-form">
+        <label for="nome-go">Nome:</label>
+        <input type="text" id="nome-go" name="nome" required>
+    
+        <label for="id-go">Id Pokemon GO:</label>
+        <input type="text" id="id-go" name="id" pattern="[0-9]+" title="Por favor, insira apenas números." oninput="validarNumero(this)" required>
+    
+        <label for="birthday-go">Data de Nascimento:</label>
+        <input type="date" id="birthday-go" name="aniversario" min="1900-12-31" required>
+        <div class="button-inscricao">
+          <a class="subscription-button" onclick="inscrever(false)" >
             Inscrever
           </a>
         </div>

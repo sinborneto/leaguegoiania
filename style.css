@@ -36,6 +36,15 @@ i {
   color: rgb(236, 209, 53);
 }
 
+#tcg-form, #go-form {
+  display: none;
+}
+
+.button-tournament {
+  display: flex;
+  gap: 10px;
+}
+
 @keyframes translateY {
   from {
     transform: translateY(0) scale(1);
